@@ -12,12 +12,12 @@ DAv is a Reinforcement Learning environment where two sides confront each other.
 The environment is implemented in such a way that at each iteration, all actions must be provided to the environment, with the attackers playing first.
 ## How to run the project
 ### Setup your working environment
-1. Create and activate a virtual environment
+1. Create and activate a virtual environment (optional)
 ```bash
 python3 -m venv dav_venv
 source dav_venv/bin/activate
 ```
-2. Download the requirements and setup the project
+2. Setup the project and download the requirements
 ```bash
 pip3 install -e .
 pip3 install -r requirements.txt
@@ -48,7 +48,7 @@ To run this script, run:
 ```bash
 python3 Mains/Examples/DAV/DQN_DAv.py
 ```
-This example uses a representation of the environment where the attackers, defenders, and walls are seen through a matrix. This matrix is full of zeros, except for the desired position. An illustration can be seen below.
+This example uses a representation of the environment where the attackers, defenders, and walls are seen through a matrix. This matrix is full of zeros, except for the desired position. The code for this state reprensentation can be found in the file `./Codes/Mains/Examples/DAv/utils.py`. An illustration can be seen below.
 <p align="center">
   <img src="./Images/Environment/Observation_NN.svg" width="500" height="400" title="DQN input illustration">
 </p>
@@ -56,9 +56,25 @@ Regarding DQN using CNN, it can be observed that without sufficient training ite
 <p align="center">
   <img src="./Images/GIFs/weird_behavior.gif" width="500" height="400" title="DQN input illustration">
 </p>
+
 #### Use a trained model
 The second one, `DQN_DAv_rendering.py`, runs one iteration of the environment using a trained model for the agents in order to show the agents playing against each other. Trained models can be found in the folder `./Codes/NN_Policies`
 To run this script, run:
 ```bash
 python3 Mains/Examples/DAV/DQN_DAv_rendering.py
+```
+
+## Citing
+
+If you use the project in your work, please consider citing it with:
+
+```bibtex
+@misc{DAv,
+  author = {Meddahi, Lounès},
+  title = {DAv, an environment for player confrontation},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/LounesMD/DAv}},
+}
 ```
